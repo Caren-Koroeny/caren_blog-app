@@ -9,7 +9,7 @@ class CreatePost < ActiveRecord::Migration[7.0]
       t.integer :CommentsCounter
       t.integer :LikesCounter
 
-      t.timestamps
+      t.timestamp
     end
   end
 end
