@@ -6,3 +6,5 @@ class Like < ApplicationRecord
     Post.find(id).increment!(:likes_counter)
   end
 end
+
+
