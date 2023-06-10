@@ -27,4 +27,19 @@ RSpec.describe User, type: :model do
   it 'User should have a bio' do
     expect(subject.bio).to be_present
   end
+
+  describe '#returns_last_three_post' do
+    let(:user) { User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
+
+    it 'returns the last three posts' do
+      user.posts.build(title: 'Post 1')
+      post2 = user.posts.build(title: 'Post 2')
+      post3 = user.posts.build(title: 'Post 3')
+      post4 = user.posts.build(title: 'Post 4')
+
+      user.save
+
+      expect(user.returns_last_three_post).to eq([post2, post3, post4])
+    end
+  end
 end
