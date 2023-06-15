@@ -6,27 +6,26 @@
       <li><%= @user.name %></li>
       <li>Number of posts: <%= @user.posts_counter %></li>
     </div>
-
   </ul>
-  <!--Bio section part-->
-   <div class="bio">
+
+  <!-- Bio section part -->
+  <div class="bio">
     <h2>Bio</h2>
-    <%= @user.bio%>
-    </div>
+    <%= @user.bio %>
+  </div>
 
-    <%@user_posts.each_with_index do |post, index|%>
-    <div class="post">
-    <h2>post <%=index+1%></h2>
-    <%=post.text %>
-    <p>Comments:<%=post.comments_counter %>||
-    Likes:<%=post.likes_counter %>
-    </p>
-
-
-    </div>
-    <%end%>
-   <button>
-  <%= link_to "See All Posts", user_posts_path(@user) %>
-</button>
-
+  <% if @user_posts.present? %>
+    <% @user_posts.each_with_index do |post, index| %>
+      <div class="post">
+        <h2>Post <%= index + 1 %></h2>
+        <%= post.text %>
+        <p>Comments: <%= post.comments_counter %> || Likes: <%= post.likes_counter %></p>
+      </div>
+    <% end %>
+    <button>
+      <%= link_to "See All Posts", user_posts_path(@user) %>
+    </button>
+  <% else %>
+    <p>No posts found for this user.</p>
+  <% end %>
 </div>

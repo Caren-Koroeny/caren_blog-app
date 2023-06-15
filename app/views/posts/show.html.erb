@@ -3,9 +3,10 @@
     <span>Post: <%= @post_index %> by <%= @user_post.author.name %></span>
     <span>Comments: <%= @comments_count %> || Likes: <%= @likes_count %></span>
   </div>
-
+  
+  <p><%= @user_post.title %></p>
+  
   <% @user_post.comments.each do |comment| %>
-    <p><%= @user_post.text %>: <%= comment.text %></p>
     <p><span><%= comment.author.name %></span>: <%= comment.text %></p>
   <% end %>
 </div>
