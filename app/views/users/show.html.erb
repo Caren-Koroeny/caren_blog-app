@@ -4,7 +4,7 @@
     <li><img src="<%= @user.photo %>"></li>
     <div class="border">
       <li><%= @user.name %></li>
-      <li>Number of posts: <%= @user.posts_counter %></li>
+      <p>Number of posts: <%= @user.posts.count %></p>
     </div>
   </ul>
 
@@ -13,13 +13,12 @@
     <h2>Bio</h2>
     <%= @user.bio %>
   </div>
-
   <% if @user_posts.present? %>
     <% @user_posts.each_with_index do |post, index| %>
       <div class="post">
         <h2>Post <%= index + 1 %></h2>
         <%= post.text %>
-        <p>Comments: <%= post.comments_counter %> || Likes: <%= post.likes_counter %></p>
+        <p>Comments: <%= post.comments.count %> || Likes: <%= post.likes.count %></p>
       </div>
     <% end %>
     <button>

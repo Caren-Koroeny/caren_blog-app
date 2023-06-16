@@ -8,7 +8,7 @@ ul,.border{
   border-radius:7px;
   padding: 12px;
   width: 50%;
-  border:3px solid black
+  border:2px solid black
 }
 ul li{
   list-style-type:none;
@@ -32,14 +32,15 @@ ul li img{
 .comments,.bio,.post{
   width:57%;
   margin-left:3%;
-  border:2px solid black;
+  border:1px solid black;
   padding:12px;
   border-radius:4px;
   font-weight: 500;
   font-size:22px;
+  margin-top: 10px;
 }
 .post{
-  margin-top:5px;
+  margin-top:20px;
   padding-bottom:4%;
   height: auto;
 
@@ -48,8 +49,14 @@ ul li img{
   float: right;
   font-weight: 600;
 }
-.comments span{
- font-weight:600; 
+.post-title{
+  font-size: 20px;
+}
+li{
+  list-style-type: none;
+}
+.post-comment{
+  margin-left: 25em;
 }
 .post_haader{
   display:flex;

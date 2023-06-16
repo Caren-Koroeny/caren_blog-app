@@ -1,8 +1,11 @@
 <div class="comments">
-  <div class="post_header">
-    <span>Post: <%= @post_index %> by <%= @user_post.author.name %></span>
-    <span>Comments: <%= @comments_count %> || Likes: <%= @likes_count %></span>
-  </div>
+<div class="post_header">
+<span>Post: <%= @post_index %> by <%= @user_post.author.name %></span>
+ <p class="post-comment">Comments: <%= @user_post.comments.count %> || Likes: <%= @user_post.likes.count %></p></span>
+</div>
+
+<p><%= @user_post.title %></p>
+
   
   <p><%= @user_post.title %></p>
   
