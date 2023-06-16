@@ -1,1 +1,30 @@
-<h1>This page shows the page for a given logged in user</h1>
+<%= stylesheet_link_tag 'users_styles' %>
+<div>
+  <ul>
+    <li><img src="<%= @user.photo %>"></li>
+    <div class="border">
+      <li><%= @user.name %></li>
+      <p>Number of posts: <%= @user.posts.count %></p>
+    </div>
+  </ul>
+
+  <!-- Bio section part -->
+  <div class="bio">
+    <h2>Bio</h2>
+    <%= @user.bio %>
+  </div>
+  <% if @user_posts.present? %>
+    <% @user_posts.each_with_index do |post, index| %>
+      <div class="post">
+        <h2>Post <%= index + 1 %></h2>
+        <%= post.text %>
+        <p>Comments: <%= post.comments.count %> || Likes: <%= post.likes.count %></p>
+      </div>
+    <% end %>
+    <button>
+      <%= link_to "See All Posts", user_posts_path(@user) %>
+    </button>
+  <% else %>
+    <p>No posts found for this user.</p>
+  <% end %>
+</div>

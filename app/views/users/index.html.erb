@@ -1,2 +1,13 @@
-<h1>This page lists all the registered users</h1>
+<%= stylesheet_link_tag 'users_styles' %>
+<div>
+  <% @users.each do |user| %>
+    <ul>
+      <li><img src="<%= user.photo %>"></li>
+      <div class="border"> 
+        <li><%= user.name %></li>
+        <p>Number of posts: <%= user.posts.count %></p>
+      </div>
+    </ul>
+  <% end %>
+</div>
 
