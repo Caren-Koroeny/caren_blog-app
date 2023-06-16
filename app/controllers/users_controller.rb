@@ -7,5 +7,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_posts = Post.where(author_id: @user.id)
   end
-  
 end

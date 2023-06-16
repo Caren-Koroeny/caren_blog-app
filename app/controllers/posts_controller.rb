@@ -5,7 +5,6 @@ class PostsController < ApplicationController
     @recent_comments = @user_posts.map(&:recent_five_comments).flatten
   end
 
-
   def show
     @user = User.find(params[:user_id])
     @user_post = @user.posts.find(params[:id])
