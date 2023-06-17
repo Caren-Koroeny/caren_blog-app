@@ -12,11 +12,7 @@ class Post < ApplicationRecord
   attribute :likesCounter, :integer, default: 0
 
   def update_posts_counter
-    author.increment!(:postsCounter)
-  end
-
-  def update_post_counter
-    author.increment!(:postsCounter)
+    author.increment!(:posts_counter)
   end
 
   def recent_five_comments()

@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @post = Post.new
   end
 
@@ -23,9 +24,11 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to user_posts_url(user_id: @post.author_id)
+      flash[:success] = 'New post uploaded successfully!'
+      redirect_to user_post_url(current_user, @post)
     else
-      render :new
+      flash[:error] = 'Post upload failed! Please try again.'
+      redirect_to new_user_post_url(current_user)
     end
   end
 
@@ -38,25 +41,28 @@ class PostsController < ApplicationController
       redirect_to user_post_path(user_id: @user_post.author_id, id: @user_post.id),
                   notice: 'Comment created successfully.'
     else
-      redirect_to user_post_path(user_id: @user_post.user.id, id: @user_post.id), alert: 'Failed to create comment.'
+      redirect_to user_post_path(user_id: @user_post.user.id, id: @user_post.id),
+                  alert: 'Failed to create comment.'
     end
   end
 
   def like
     @user_post = Post.find(params[:id])
     @like = Like.new(author: current_user, post: @user_post)
+
     if @like.save
       flash[:success] = 'Gave a like to this post!'
     else
       flash[:error] = 'Adding a like failed!'
     end
+
     redirect_to user_post_path(@user_post.author, @user_post)
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :comments_counter, :likes_counter)
+    params.require(:post).permit(:title, :text)
   end
 
   def comment_params
