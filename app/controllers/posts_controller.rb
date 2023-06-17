@@ -55,4 +55,3 @@ class PostsController < ApplicationController
     params.require(:comment).permit(:post_id, :text)
   end
 end
- 
