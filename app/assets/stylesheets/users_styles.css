@@ -74,6 +74,13 @@ ul .border li:nth-child(2) {
   justify-content: space-between;
 }
 
+.post-comment {
+  
+  top: 10px;
+  float: right;
+
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -87,14 +94,15 @@ button {
   box-shadow: 12px 12px 12px black;
   background-color: transparent;
 }
-div input{
-  margin-bottom: bottom 2px;
+
+div input {
+  margin: 2px;
 }
 
-.form{
-display: flex;
-flex-direction:column;
-margin-left:2.5rem;
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
 }
 
 /* CSS for form inputs */
@@ -128,6 +136,7 @@ margin-left:2.5rem;
 .post-form .btn:hover {
   background-color: #3071a9;
 }
+
 /* CSS for form and comments section */
 .post_comments {
   margin-top: 20px;
@@ -148,11 +157,6 @@ margin-left:2.5rem;
 
 .comments p {
   margin: 5px 0;
-}
-
-
-.form {
-  margin-top: 20px;
 }
 
 .comment_input textarea {
@@ -180,7 +184,7 @@ margin-left:2.5rem;
   display: inline-block;
   padding: 10px 20px;
   background-color: #e53935;
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   border: none;
   border-radius: 4px;
