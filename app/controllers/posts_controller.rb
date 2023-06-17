@@ -41,6 +41,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @user_post = Post.find(params[:id])
+    @like = Like.new(author: current_user, post: @user_post)
+    if @like.save
+      flash[:success] = "Gave a like to this post!"
+    else
+      flash[:error] = 'Adding a like failed!'
+    end
+    redirect_to user_post_path(@user_post.author, @user_post)
+  end
+
   private
 
   def post_params

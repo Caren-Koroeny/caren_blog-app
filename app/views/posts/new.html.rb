@@ -24,4 +24,3 @@
       <%= form.submit "Create Post", class: 'btn btn-primary' %>
     </div>
   <% end %>
-  
