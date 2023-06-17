@@ -69,13 +69,14 @@ ul .border li:nth-child(2) {
   font-size: 20px;
 }
 
-.post-comment {
-  margin-left: 25em;
-}
-
 .post_haader {
   display: flex;
   justify-content: space-between;
+}
+
+.post-comment {
+  top: 10px;
+  float: right;
 }
 
 a {
@@ -90,4 +91,109 @@ button {
   border-radius: 5px;
   box-shadow: 12px 12px 12px black;
   background-color: transparent;
+}
+
+div input {
+  margin: 2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
+
+/* CSS for form inputs */
+.post-form .form-group {
+  margin-bottom: 20px;
+}
+
+.post-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.post-form input[type="text"],
+.post-form input[type="number"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.post-form .btn {
+  padding: 10px 20px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.post-form .btn:hover {
+  background-color: #3071a9;
+}
+
+/* CSS for form and comments section */
+.post_comments {
+  margin-top: 20px;
+}
+
+.post_header {
+  margin-bottom: 10px;
+}
+
+.post_header span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.post_header p {
+  margin: 0;
+}
+
+.comments p {
+  margin: 5px 0;
+}
+
+.comment_input textarea {
+  width: 70%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #3071a9;
+}
+
+.like-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e53935;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background-color: #c62828;
+}
+
+.like-button:active {
+  background-color: #d32f2f;
 }
