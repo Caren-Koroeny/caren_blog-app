@@ -185,6 +185,11 @@ Example command:
 - Twitter: [@carensiya](https://twitter.com/home)
 - LinkedIn: [@carensiya](www.linkedin.com/in/caren-siya-a89712180)
 
+👤  <a name="authors">Williams Serubiri</a>
+
+- GitHub: [@veronica365](https://github.com/veronica365)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/william-sserubiri-veronica/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
