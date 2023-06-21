@@ -9,7 +9,6 @@ RSpec.describe 'views/users/index.hmtl.erb', type: :view do
       User.delete_all
       visit 'users'
     end
-
   end
 
   describe 'user index page when there are users' do
@@ -23,17 +22,17 @@ RSpec.describe 'views/users/index.hmtl.erb', type: :view do
 
     it 'should see the username of all other users' do
       expect(page).to have_content(@name)
-      expect(page).to have_content("Number of posts: 0")
+      expect(page).to have_content('Number of posts: 0')
       expect(page).to have_selector('ul', count: 1)
     end
-    
+
     it 'should see the profile picture for each user.' do
-        expect(page).to have_selector('img', count: 1)
-        expect(page).to have_css("img[src='#{@photo}']")
+      expect(page).to have_selector('img', count: 1)
+      expect(page).to have_css("img[src='#{@photo}']")
     end
-    
+
     it 'should see the number of posts each user has written.' do
-        expect(page).to have_content("Number of posts: 0")
+      expect(page).to have_content('Number of posts: 0')
     end
 
     # TODO: uncomment when we have added links
@@ -48,7 +47,7 @@ RSpec.describe 'views/users/index.hmtl.erb', type: :view do
       Post.create(author: @user, title: 'AI and the future of programming',
                   text: 'Is this the end for developer jobs or the start of a new era')
       visit 'users'
-      expect(page).to have_content("Number of posts: 1")
+      expect(page).to have_content('Number of posts: 1')
     end
   end
 end
