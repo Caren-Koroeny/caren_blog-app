@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @user_posts = @user.posts.order(created_at: :desc)
-    @recent_comments = @user_posts.map(&:recent_five_comments).flatten
+    @user_posts = @user.posts.includes(:comments).order(created_at: :desc)
+    @recent_comments = @user_posts.flat_map(&:recent_five_comments)
   end
 
   def show
@@ -29,6 +29,20 @@ class PostsController < ApplicationController
     else
       flash[:error] = 'Post upload failed! Please try again.'
       redirect_to new_user_post_url(current_user)
+    end
+  end
+
+  def create_comment
+    @user_post = Post.find(params[:id])
+    @comment = @user_post.comments.build(comment_params)
+    @comment.author = current_user
+
+    if @comment.save
+      redirect_to user_post_path(user_id: @user_post.author_id, id: @user_post.id),
+                  notice: 'Comment created successfully.'
+    else
+      redirect_to user_post_path(user_id: @user_post.user.id, id: @user_post.id),
+                  alert: 'Failed to create comment.'
     end
   end
 
