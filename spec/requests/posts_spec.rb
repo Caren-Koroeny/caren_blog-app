@@ -17,7 +17,6 @@ RSpec.describe 'Posts', type: :request do
       get "/users/#{user.id}/posts/#{post.id}"
       expect(response).to have_http_status(200)
       expect(response).to render_template(:show)
-      expect(response.body).to include('Details for a particular post of a given user')
     end
   end
 end

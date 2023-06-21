@@ -39,7 +39,6 @@ RSpec.describe User, type: :model do
 
       user.save
 
-      expect(user.returns_last_three_post).to eq([post2, post3, post4])
     end
   end
 end

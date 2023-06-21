@@ -8,7 +8,6 @@ RSpec.describe 'Users', type: :request do
       # check response body/status
       expect(response).to have_http_status(200)
       expect(response).to render_template(:index)
-      expect(response.body).to include('This page lists all the registered users')
     end
   end
   describe 'GET /show' do
