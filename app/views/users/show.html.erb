@@ -1,12 +1,13 @@
 <%= stylesheet_link_tag 'users_styles' %>
 <div>
-  <ul>
-    <li><img src="<%= @user.photo %>"></li>
-    <div class="border">
-      <li><%= @user.name %></li>
-      <p>Number of posts: <%= @user.posts.count %></p>
-    </div>
-  </ul>
+<ul>
+<li><img src="<%= @user.photo %>"></li>
+<div class="border">
+  <li><%= @user.name %></li>
+  <p>Number of posts: <%= @user_posts.count %></p>
+</div>
+</ul>
+
 
   <!-- Bio section part -->
   <div class="bio">
