@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
 
   validates :email, presence: true
-  
+
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
