@@ -1,0 +1,19 @@
+<div class='my-3 d-flex align-items-center flex-column'>
+  <h2>Change your password</h2>
+
+  <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'auth-form container' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.hidden_field :reset_password_token %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+
+    <div class="actions">
+      <%= f.submit "Change my password", class: 'btn btn-dark btn-block text-center' %>
+    </div>
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>

@@ -40,7 +40,6 @@ For more information on the importance of a professional README for your reposit
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -57,7 +56,6 @@ For more information on the importance of a professional README for your reposit
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
-
 # 📖 [Caren_Blog-App <a name="about-project"></a>
 
 > This Blog app is a classic example of a blog website. It is a functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
@@ -102,12 +100,6 @@ For more information on the importance of a professional README for your reposit
 - **Foreign keys should Included**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Comming Soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
