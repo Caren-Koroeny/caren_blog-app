@@ -56,7 +56,6 @@ For more information on the importance of a professional README for your reposit
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
-
 # 📖 [Caren_Blog-App <a name="about-project"></a>
 
 > This Blog app is a classic example of a blog website. It is a functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
